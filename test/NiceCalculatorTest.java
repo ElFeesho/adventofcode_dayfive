@@ -25,7 +25,20 @@ public class NiceCalculatorTest {
         assertThat(niceCalculator.countVowels("aeioucdf"), is(5));
     }
 
+    @Test
+    public void canDetectBadStrings()
+    {
+        NiceCalculator niceCalculator = new NiceCalculator();
+
+        assertThat(niceCalculator.hasBadStrings("aieoab"), is(true));
+        assertThat(niceCalculator.hasBadStrings("aicdeo"), is(true));
+        assertThat(niceCalculator.hasBadStrings("aipqeo"), is(true));
+        assertThat(niceCalculator.hasBadStrings("xyieo"), is(true));
+    }
+
     private class NiceCalculator {
+
+        private Set<String> badStrings = new HashSet<>(Arrays.asList("ab", "cd", "pq", "xy"));
 
         public boolean containsDouble(String input) {
             char lastCharacter = 0;
@@ -49,6 +62,16 @@ public class NiceCalculatorTest {
                 }
             }
             return count;
+        }
+
+        public boolean hasBadStrings(String input) {
+            for (String badString : badStrings) {
+                if (input.contains(badString))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

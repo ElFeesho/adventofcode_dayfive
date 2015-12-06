@@ -16,6 +16,13 @@ public class NiceCalculatorTest {
     private class NiceCalculator {
 
         public boolean containsDouble(String input) {
+            char lastCharacter = 0;
+            for (char character : input.toCharArray()) {
+                if(character == lastCharacter) {
+                    return true;
+                }
+                lastCharacter = character;
+            }
             return false;
         }
     }

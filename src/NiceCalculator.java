@@ -53,7 +53,13 @@ class NiceCalculator {
     }
 
     public boolean containsRepeatingCharacter(String input) {
+        char[] chars = input.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            if(i+2 < chars.length && chars[i] == chars[i+2])
+            {
+                return true;
+            }
+        }
         return false;
-
     }
 }

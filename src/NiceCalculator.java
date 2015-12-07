@@ -44,7 +44,7 @@ class NiceCalculator {
         for(int i = 0; i<input.length()-2; i++)
         {
             String substring = input.substring(i, i+2);
-            if (input.substring(i+2).startsWith(substring))
+            if (input.substring(i+2).contains(substring))
             {
                 return true;
             }

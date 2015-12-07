@@ -33,16 +33,16 @@ public class NiceCalculatorTest {
     }
 
     @Test
-    public void canDetechDoubleBigrams()
+    public void canDetectDoubleBigrams()
     {
         NiceCalculator niceCalculator = new NiceCalculator();
 
         assertThat(niceCalculator.containsDoubleBigram("abxtsjsab"), is(true));
-        assertThat(niceCalculator.containsDoubleBigram("abbbba"), is(true));
+        assertThat(niceCalculator.containsDoubleBigram("abbxbba"), is(true));
 
         assertThat(niceCalculator.containsDoubleBigram("abba"), is(false));
         assertThat(niceCalculator.containsDoubleBigram("baaab"), is(false));
-
     }
+
 
 }

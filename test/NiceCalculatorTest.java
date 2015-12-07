@@ -37,7 +37,7 @@ public class NiceCalculatorTest {
     {
         NiceCalculator niceCalculator = new NiceCalculator();
 
-        assertThat(niceCalculator.containsDoubleBigram("abab"), is(true));
+        assertThat(niceCalculator.containsDoubleBigram("abxtsjsab"), is(true));
         assertThat(niceCalculator.containsDoubleBigram("abbbba"), is(true));
 
         assertThat(niceCalculator.containsDoubleBigram("abba"), is(false));

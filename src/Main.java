@@ -10,9 +10,9 @@ public class Main {
         int goodCount = 0;
         try {
             while (reader.ready()) {
-                String line = null;
+                String line;
                 line = reader.readLine();
-                if (calculator.containsDouble(line) && calculator.countVowels(line) >= 3 && !calculator.hasBadStrings(line)) {
+                if (calculator.containsDoubleBigram(line) && calculator.containsRepeatingCharacter(line)) {
                     goodCount++;
                 }
             }

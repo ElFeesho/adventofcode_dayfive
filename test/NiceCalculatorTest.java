@@ -44,5 +44,16 @@ public class NiceCalculatorTest {
         assertThat(niceCalculator.containsDoubleBigram("baaab"), is(false));
     }
 
+    @Test
+    public void canDetectRepeatingCharactersWithSpaceInBetween()
+    {
+        NiceCalculator niceCalculator = new NiceCalculator();
+
+        assertThat(niceCalculator.containsRepeatingCharacter("axa"), is(true));
+        assertThat(niceCalculator.containsRepeatingCharacter("xyuyx"), is(true));
+
+        assertThat(niceCalculator.containsRepeatingCharacter("aab"), is(false));
+        assertThat(niceCalculator.containsRepeatingCharacter("baab"), is(false));
+    }
 
 }

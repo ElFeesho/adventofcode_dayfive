@@ -51,4 +51,9 @@ class NiceCalculator {
         }
         return false;
     }
+
+    public boolean containsRepeatingCharacter(String input) {
+        return false;
+
+    }
 }

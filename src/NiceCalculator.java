@@ -41,6 +41,14 @@ class NiceCalculator {
     }
 
     public boolean containsDoubleBigram(String input) {
+        for(int i = 0; i<input.length()-2; i++)
+        {
+            String substring = input.substring(i, i+2);
+            if (input.substring(i+2).startsWith(substring))
+            {
+                return true;
+            }
+        }
         return false;
     }
 }
